@@ -10,12 +10,24 @@ namespace ClassDemo1.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Name"] = "My first MVC app";
+            DateTime today = new DateTime(2019, 12, 29, 5, 30, 0);
+                // DateTime.Now;
+            ViewData["Time"] = today.ToShortTimeString();
+            ViewData["Date"] = today.ToShortDateString();
             return View();
         }
 
-        public string About()
+        public IActionResult About(int id)
         {
-            return "This is the about page";
+            ViewData["Count"] = id;
+            return View();
+        }
+
+        public IActionResult Items()
+        {
+            int[] items = { 123, 652, 13, 94, 500, 76 };
+            return View(items);
         }
     }
 }

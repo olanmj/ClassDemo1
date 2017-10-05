@@ -1,0 +1,16 @@
+﻿@model int[]
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+<h2>Items</h2>
+
+<h3>Here are the items</h3>
+
+@foreach (var item in Model)
+{
+    <div>@item</div>
+
+}
+

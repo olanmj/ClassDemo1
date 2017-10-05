@@ -41,10 +41,10 @@ namespace ClassDemo1
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello MVC World!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello MVC World!");
+            //});
         }
     }
 }
