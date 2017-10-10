@@ -1,0 +1,16 @@
+﻿@model ClassDemo1.Models.Product
+@{
+    ViewData["Title"] = "ShowProduct";
+}
+
+<h2>Sample Product</h2>
+
+<div>Product name: @Model.Name</div>
+<div>Category: @Model.Category</div>
+<div>Product Description: @Model.Description</div>
+<div>Price: @Model.Price.ToString("C0")</div>
+<div>Quantity: @Model.Quantity</div>
+<div>Amount due: @Model.AmountDue.ToString("C0")</div>
+
+
+

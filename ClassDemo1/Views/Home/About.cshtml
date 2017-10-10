@@ -5,6 +5,9 @@
 
 <h2>About</h2>
 <div>"This is the about page"</div>
+@if (ViewData["Count"] != null)
+{
+
 <div>The count is @ViewData["Count"]</div>
 
 <ul>
@@ -14,4 +17,10 @@
         <li>Item @i</li>
     }
 </ul>
+
+} else
+{
+    <div>Count is not assigned</div>
+
+}
 

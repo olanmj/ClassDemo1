@@ -18,7 +18,7 @@ namespace ClassDemo1.Controllers
             return View();
         }
 
-        public IActionResult About(int id)
+        public IActionResult About(int? id)
         {
             ViewData["Count"] = id;
             return View();

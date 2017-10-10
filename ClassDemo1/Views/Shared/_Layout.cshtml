@@ -8,9 +8,11 @@
 </head>
 <body>
     <header>
-        <a href="/Home/Index">Index</a>
-        <a href="/Home/About">About</a>
-        <a href="/Home/Items">Items</a>
+        <a asp-controller="Home" asp-action="Index">Index</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Items">Items</a>
+        <a asp-controller="Product" asp-action="ShowProduct">Sample Product</a>
+        <a asp-controller="Product" asp-action="EnterProduct">Enter a Product</a>
     </header>
     <h2>Class Demo 1</h2>
     <div>
