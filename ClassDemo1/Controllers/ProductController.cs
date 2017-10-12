@@ -9,9 +9,13 @@ namespace ClassDemo1.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult ShowProduct()
+        private static List<Product> Products = new List<Product>();
+
+        public ProductController()
         {
-            Product p = new Product
+            if (Products.Count() == 0)
+            {
+                Product p = new Product
             {
                 ProductID = 100,
                 Name = "Kayak",
@@ -20,7 +24,35 @@ namespace ClassDemo1.Controllers
                 Category = "Watersports",
                 Quantity = 3
             };
+
+                Products.Add(p);
+            }
+        }
+        public IActionResult ShowProduct(int? id)
+        {
+            Product p;
+            if (id == null)
+            {
+                p = new Product
+                {
+                    ProductID = 100,
+                    Name = "Kayak",
+                    Description = "A boat for one person",
+                    Price = 750M,
+                    Category = "Watersports",
+                    Quantity = 3
+                };
+            } else
+            {
+                p = Products.Find(prod => prod.ProductID == id);
+            }
+            id = null;
             return View(p);
+        }
+
+        public IActionResult ProductList()
+        {
+            return View(Products);
         }
 
         public IActionResult EnterProduct()
@@ -31,7 +63,8 @@ namespace ClassDemo1.Controllers
         [HttpPost]
         public IActionResult EnterProduct(Product p)
         {
-            if (ModelState.IsValid) { 
+            if (ModelState.IsValid) {
+                Products.Add(p);
                 return View("ShowProduct", p);
             } else
             {

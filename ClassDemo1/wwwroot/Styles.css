@@ -9,7 +9,8 @@ header, footer {
     padding: 15px;
 }
 
-a {
+header > a {
     color: white;
     text-decoration: none;
+    padding-right: 50px;
 }
